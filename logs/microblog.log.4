@@ -1,0 +1,96 @@
+2017-12-22 22:26:18,595 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
+2017-12-22 22:26:28,125 ERROR: Exception on /search [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/main/routes.py", line 141, in search
+    posts, total = Post.search(g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 14, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/search.py", line 22, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/client/__init__.py", line 636, in search
+    doc_type, '_search'), params=params, body=body)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/transport.py", line 314, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/connection/http_urllib3.py", line 161, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+NotFoundError: TransportError(404, u'index_not_found_exception', u'no such index')
+2017-12-22 22:26:46,688 ERROR: Exception on /search [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/main/routes.py", line 141, in search
+    posts, total = Post.search(g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 14, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/search.py", line 22, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/client/__init__.py", line 636, in search
+    doc_type, '_search'), params=params, body=body)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/transport.py", line 314, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/connection/http_urllib3.py", line 161, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+NotFoundError: TransportError(404, u'index_not_found_exception', u'no such index')
+2017-12-22 22:29:33,745 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
+2017-12-22 22:29:39,973 ERROR: Exception on /search [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask_login/utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/main/routes.py", line 141, in search
+    posts, total = Post.search(g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 14, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/search.py", line 22, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/client/__init__.py", line 636, in search
+    doc_type, '_search'), params=params, body=body)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/transport.py", line 314, in perform_request
+    status, headers, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/connection/http_urllib3.py", line 161, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+NotFoundError: TransportError(404, u'index_not_found_exception', u'no such index')
+2017-12-22 22:39:33,425 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]

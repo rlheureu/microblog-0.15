@@ -1,0 +1,109 @@
+2018-02-05 14:28:32,064 ERROR: Exception on /api/users/3 [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/api/users.py", line 9, in get_user
+    return jsonify(User.query.get_or_404(id).to_dict())
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 171, in to_dict
+    'last_seen': self.last_seen.isoformat() + 'Z',
+AttributeError: 'NoneType' object has no attribute 'isoformat'
+2018-02-05 14:33:02,710 ERROR: Exception on /api/users/3 [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/api/users.py", line 9, in get_user
+    return jsonify(User.query.get_or_404(id).to_dict())
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 171, in to_dict
+    'last_seen': self.last_seen.isoformat() + 'Z',
+AttributeError: 'NoneType' object has no attribute 'isoformat'
+2018-02-05 14:34:42,713 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
+2018-02-05 14:34:44,397 ERROR: Exception on /api/users/3 [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/api/users.py", line 9, in get_user
+    return jsonify(User.query.get_or_404(id).to_dict())
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 171, in to_dict
+    'last_seen': self.last_seen.isoformat() + 'Z',
+AttributeError: 'NoneType' object has no attribute 'isoformat'
+2018-02-05 14:35:09,802 ERROR: Exception on /api/users/3 [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/api/users.py", line 9, in get_user
+    return jsonify(User.query.get_or_404(id).to_dict())
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 171, in to_dict
+    'last_seen': self.last_seen.isoformat() + 'Z',
+AttributeError: 'NoneType' object has no attribute 'isoformat'
+2018-02-05 14:36:09,738 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
+2018-02-05 14:39:28,265 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
+2018-02-05 14:43:01,243 ERROR: Exception on /api/users [POST] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/api/users.py", line 45, in create_user
+    response = jsonify(user.to_dict())
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 171, in to_dict
+    'last_seen': self.last_seen.isoformat() + 'Z',
+AttributeError: 'NoneType' object has no attribute 'isoformat'
+2018-02-05 14:48:21,008 ERROR: Exception on /api/users/3 [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/api/users.py", line 9, in get_user
+    return jsonify(User.query.get_or_404(id).to_dict())
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 171, in to_dict
+    'last_seen': self.last_seen.isoformat() + 'Z',
+AttributeError: 'NoneType' object has no attribute 'isoformat'
+2018-02-05 15:25:27,385 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
+2018-02-05 16:21:31,882 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
+2018-02-05 16:21:35,044 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
+2018-02-05 16:56:17,598 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
