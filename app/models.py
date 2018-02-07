@@ -77,7 +77,7 @@ class User(PaginatedAPIMixin, UserMixin, db.Model):
     password_hash = db.Column(db.String(128))
     posts = db.relationship('Post', backref='author', lazy='dynamic')
     about_me = db.Column(db.String(140))
-    last_seen = db.Column(db.DateTime)
+    last_seen = db.Column(db.DateTime, default=datetime.utcnow)
     followed = db.relationship(
         'User', secondary=followers,
         primaryjoin=(followers.c.follower_id == id),
@@ -190,8 +190,8 @@ class User(PaginatedAPIMixin, UserMixin, db.Model):
         for field in ['username', 'email', 'about_me']:
             if field in data:
                 setattr(self, field, data[field])
-            if new_user and 'password' in data:
-                self.set_password(data['password'])
+        if new_user and 'password' in data:
+            self.set_password(data['password'])
 
     def get_token(self, expires_in=3600):
         now = datetime.utcnow()
@@ -218,7 +218,7 @@ def load_user(id):
     return User.query.get(int(id))
 
 
-class Post(SearchableMixin, db.Model):
+class Post(PaginatedAPIMixin, SearchableMixin, db.Model):
     __searchable__ = ['body']
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(140))
@@ -228,6 +228,30 @@ class Post(SearchableMixin, db.Model):
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
+
+    def to_dict(self):
+        data = {
+            'id': self.id,
+            'body': self.body,
+            'timestamp': self.timestamp,
+            'user_id': self.user_id,
+            '_links': {
+                'author': url_for('api.get_user', id=self.user_id),
+                'posts': url_for('api.get_user_posts', id=self.user_id)
+            }
+        }
+        return data
+
+    def from_dict(self, data, new_post=False):
+        if new_post:
+            for field in ['body', 'user_id']:
+                if field in data:
+                    setattr(self, field, data[field])
+        else:
+            for field in ['body', 'timestamp']:
+                if field in data:
+                    setattr(self, field, data[field])
+
 
 db.event.listen(db.session, 'before_commit', Post.before_commit)
 db.event.listen(db.session, 'after_commit', Post.after_commit)

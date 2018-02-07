@@ -1,4 +1,4 @@
-2017-12-22 22:39:40,560 ERROR: Exception on /search [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
+2018-02-06 17:26:07,809 ERROR: Exception on /api/posts/Rob/ [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -10,55 +10,23 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask_login/utils.py", line 228, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/rlheureu/Coding/microblog-0.15/app/main/routes.py", line 141, in search
-    posts, total = Post.search(g.search_form.q.data, page, current_app.config['POSTS_PER_PAGE'])
-  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 14, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "/Users/rlheureu/Coding/microblog-0.15/app/search.py", line 22, in query_index
-    'from': (page - 1) * per_page, 'size': per_page})
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/client/utils.py", line 76, in _wrapped
-    return func(*args, params=params, **kwargs)
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/client/__init__.py", line 636, in search
-    doc_type, '_search'), params=params, body=body)
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/transport.py", line 314, in perform_request
-    status, headers, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/connection/http_urllib3.py", line 161, in perform_request
-    self._raise_error(response.status, raw_data)
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/elasticsearch/connection/base.py", line 125, in _raise_error
-    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
-NotFoundError: TransportError(404, u'index_not_found_exception', u'no such index')
-2017-12-22 22:50:48,895 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2017-12-22 22:51:00,334 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2017-12-29 13:40:12,504 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2017-12-29 13:41:30,531 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2017-12-29 13:41:39,436 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2017-12-29 13:42:52,658 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2017-12-29 14:13:35,840 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2017-12-29 14:16:02,707 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2017-12-29 14:16:11,222 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-01-02 11:34:18,400 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-01-02 11:34:33,990 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-01-02 11:34:43,272 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-01-03 11:39:20,854 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-01-03 11:43:31,037 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-01-03 11:43:50,000 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-01-03 11:48:37,166 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-01-03 11:48:54,579 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-01-03 11:49:05,018 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-02-01 10:40:02,609 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-02-01 10:41:30,657 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-02-01 11:41:54,130 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-02-01 14:55:12,581 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-02-01 14:55:16,297 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-02-01 17:40:34,594 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-02-01 17:52:26,442 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-02-01 17:52:31,381 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:78]
-2018-02-02 08:18:19,469 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:82]
-2018-02-02 08:18:30,609 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:82]
-2018-02-02 09:35:35,970 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:82]
-2018-02-02 09:35:47,830 ERROR: Exception on /user/Rob [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
+  File "/Users/rlheureu/Coding/microblog-0.15/app/api/posts.py", line 31, in get_user_posts
+    data = Post.to_collection_dict(Post.query.filter_by(user_id=user.id), page, per_page, 'api.get_user_posts', username=user.username)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 16, in to_collection_dict
+    'items': [item.to_dict() for item in resources.items],
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 240, in to_dict
+    'posts': url_for('api.get_user_posts', id=self.user_id)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/werkzeug/routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'api.get_user_posts' with values ['id']. Did you forget to specify values ['username']?
+2018-02-06 17:28:31,673 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
+2018-02-06 17:28:33,620 ERROR: Exception on /api/posts/Rob/ [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -70,27 +38,76 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask_login/utils.py", line 228, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/rlheureu/Coding/microblog-0.15/app/main/routes.py", line 76, in user
-    next_url=next_url, prev_url=prev_url)
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/templating.py", line 133, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/jinja2/environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/jinja2/loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/jinja2/environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+  File "/Users/rlheureu/Coding/microblog-0.15/app/api/posts.py", line 31, in get_user_posts
+    data = Post.to_collection_dict(Post.query.filter_by(user_id=user.id), page, per_page, 'api.get_user_posts', username=username)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 16, in to_collection_dict
+    'items': [item.to_dict() for item in resources.items],
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 240, in to_dict
+    'posts': url_for('api.get_user_posts', id=self.user_id)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
     reraise(exc_type, exc_value, tb)
-  File "/Users/rlheureu/Coding/microblog-0.15/app/templates/user.html", line 50, in template
-    {% endblock %}
-TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
-2018-02-02 09:39:23,678 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:82]
-2018-02-02 09:41:29,754 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:82]
-2018-02-02 09:43:43,771 INFO: Microblog startup [in ./app/__init__.py:82]
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/werkzeug/routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'api.get_user_posts' with values ['id']. Did you forget to specify values ['username']?
+2018-02-06 21:06:50,713 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
+2018-02-06 21:07:31,804 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
+2018-02-06 21:08:04,068 ERROR: Exception on /api/Rob/posts [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/api/posts.py", line 31, in get_user_posts
+    data = Post.to_collection_dict(Post.query.filter_by(user_id=user.id), page, per_page, 'api.get_user_posts', username=username)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 16, in to_collection_dict
+    'items': [item.to_dict() for item in resources.items],
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 240, in to_dict
+    'posts': url_for('api.get_user_posts', id=self.user_id)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/werkzeug/routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'api.get_user_posts' with values ['id']. Did you forget to specify values ['username']?
+2018-02-06 21:08:24,285 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
+2018-02-06 21:08:25,917 ERROR: Exception on /api/Rob/posts [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/api/posts.py", line 31, in get_user_posts
+    data = Post.to_collection_dict(Post.query.filter_by(user_id=user.id), page, per_page, 'api.get_user_posts', id=username)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 16, in to_collection_dict
+    'items': [item.to_dict() for item in resources.items],
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 240, in to_dict
+    'posts': url_for('api.get_user_posts', id=self.user_id)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/werkzeug/routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'api.get_user_posts' with values ['id']. Did you forget to specify values ['username']?
+2018-02-06 21:08:45,664 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]

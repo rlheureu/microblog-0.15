@@ -1,4 +1,4 @@
-2018-02-05 14:28:32,064 ERROR: Exception on /api/users/3 [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
+2018-02-07 08:46:43,171 ERROR: Exception on /api/posts [POST] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -10,12 +10,25 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/rlheureu/Coding/microblog-0.15/app/api/users.py", line 9, in get_user
-    return jsonify(User.query.get_or_404(id).to_dict())
-  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 171, in to_dict
-    'last_seen': self.last_seen.isoformat() + 'Z',
-AttributeError: 'NoneType' object has no attribute 'isoformat'
-2018-02-05 14:33:02,710 ERROR: Exception on /api/users/3 [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask_httpauth.py", line 93, in decorated
+    return f(*args, **kwargs)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/api/posts.py", line 51, in create_post
+    post.from_dict(data, new_post=True)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 248, in from_dict
+    setattr(self, field, data[field])
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/orm/attributes.py", line 224, in __set__
+    instance_dict(instance), value, None)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/orm/attributes.py", line 812, in set
+    value = self.fire_replace_event(state, dict_, value, old, initiator)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/orm/attributes.py", line 834, in fire_replace_event
+    self._replace_token or self._init_append_or_replace_token())
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/orm/attributes.py", line 1175, in emit_backref_from_scalar_set_event
+    child_state, child_dict = instance_state(child),\
+AttributeError: 'int' object has no attribute '_sa_instance_state'
+2018-02-07 09:40:17,344 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
+2018-02-07 09:42:14,050 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
+2018-02-07 10:03:05,989 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
+2018-02-07 10:04:13,226 ERROR: Exception on /api/posts/23 [PUT] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -27,13 +40,13 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/rlheureu/Coding/microblog-0.15/app/api/users.py", line 9, in get_user
-    return jsonify(User.query.get_or_404(id).to_dict())
-  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 171, in to_dict
-    'last_seen': self.last_seen.isoformat() + 'Z',
-AttributeError: 'NoneType' object has no attribute 'isoformat'
-2018-02-05 14:34:42,713 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
-2018-02-05 14:34:44,397 ERROR: Exception on /api/users/3 [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask_httpauth.py", line 93, in decorated
+    return f(*args, **kwargs)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/api/posts.py", line 69, in update_post
+    data['timestamp'] = datetime.utcnow
+NameError: global name 'datetime' is not defined
+2018-02-07 10:04:37,946 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
+2018-02-07 10:04:40,607 ERROR: Exception on /api/posts/23 [PUT] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -45,65 +58,52 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/rlheureu/Coding/microblog-0.15/app/api/users.py", line 9, in get_user
-    return jsonify(User.query.get_or_404(id).to_dict())
-  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 171, in to_dict
-    'last_seen': self.last_seen.isoformat() + 'Z',
-AttributeError: 'NoneType' object has no attribute 'isoformat'
-2018-02-05 14:35:09,802 ERROR: Exception on /api/users/3 [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/rlheureu/Coding/microblog-0.15/app/api/users.py", line 9, in get_user
-    return jsonify(User.query.get_or_404(id).to_dict())
-  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 171, in to_dict
-    'last_seen': self.last_seen.isoformat() + 'Z',
-AttributeError: 'NoneType' object has no attribute 'isoformat'
-2018-02-05 14:36:09,738 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
-2018-02-05 14:39:28,265 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
-2018-02-05 14:43:01,243 ERROR: Exception on /api/users [POST] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/rlheureu/Coding/microblog-0.15/app/api/users.py", line 45, in create_user
-    response = jsonify(user.to_dict())
-  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 171, in to_dict
-    'last_seen': self.last_seen.isoformat() + 'Z',
-AttributeError: 'NoneType' object has no attribute 'isoformat'
-2018-02-05 14:48:21,008 ERROR: Exception on /api/users/3 [GET] [in /Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/rlheureu/Coding/microblog-0.15/app/api/users.py", line 9, in get_user
-    return jsonify(User.query.get_or_404(id).to_dict())
-  File "/Users/rlheureu/Coding/microblog-0.15/app/models.py", line 171, in to_dict
-    'last_seen': self.last_seen.isoformat() + 'Z',
-AttributeError: 'NoneType' object has no attribute 'isoformat'
-2018-02-05 15:25:27,385 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
-2018-02-05 16:21:31,882 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
-2018-02-05 16:21:35,044 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
-2018-02-05 16:56:17,598 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/flask_httpauth.py", line 93, in decorated
+    return f(*args, **kwargs)
+  File "/Users/rlheureu/Coding/microblog-0.15/app/api/posts.py", line 74, in update_post
+    db.session.commit()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 906, in commit
+    self.transaction.commit()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 461, in commit
+    self._prepare_impl()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2177, in flush
+    self._flush(objects)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2297, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2261, in _flush
+    flush_context.execute()
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 548, in execute
+    uow
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 177, in save_obj
+    mapper, table, update)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 737, in _emit_update_statements
+    execute(statement, multiparams)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1121, in _execute_context
+    None, None)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _execute_context
+    context = constructor(dialect, self, conn, *args)
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 623, in _init_compiled
+    param.append(processors[key](compiled_params[key]))
+  File "/Users/rlheureu/Coding/microblog-0.15/venv/lib/python2.7/site-packages/sqlalchemy/dialects/sqlite/base.py", line 610, in process
+    raise TypeError("SQLite DateTime type only accepts Python "
+StatementError: (exceptions.TypeError) SQLite DateTime type only accepts Python datetime and date objects as input. [SQL: u'UPDATE post SET body=?, timestamp=? WHERE post.id = ?'] [parameters: [{'body': u'API Put 1', 'timestamp': <built-in method utcnow of type object at 0x109f4d588>, 'post_id': 23}]]
+2018-02-07 10:06:09,161 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
+2018-02-07 10:17:53,573 INFO: Microblog startup [in /Users/rlheureu/Coding/microblog-0.15/app/__init__.py:85]
